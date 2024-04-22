@@ -1,6 +1,11 @@
 ---
 import Container from "./Container.astro";
 import servicesData from "./Data/services.json";
+
+import gsap from "gsap/all";
+import ScrollTrigger from "gsap/ScrollTrigger";
+// Register the ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 ---
 
 <Container>
@@ -33,7 +38,7 @@ import servicesData from "./Data/services.json";
                   <div class="text-3xl font-medium">{name2}</div>
                 </div>
               </div>
-              <a class="justify-start items-center gap-[15px] inline-flex" href={link}>
+              <a class="justify-start items-center gap-[15px] learn-search inline-flex" href={link}>
                 <div class="w-[41px] h-[41px] relative">
                   <img class="w-[41px] h-[41px] left-0 top-0 absolute" src={arrow} />
                 </div>
@@ -70,3 +75,15 @@ import servicesData from "./Data/services.json";
     </div>
   </div>
 </Container>
+
+<script is:inline>
+  gsap.registerPlugin(ScrollTrigger);
+  // This script will run on the client side after the page has loaded
+  let selectButtons = document.querySelectorAll(".learn-search");
+
+  selectButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      button.classList.toggle("active");
+    });
+  });
+</script>
