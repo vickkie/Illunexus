@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   .font-outline {
     -webkit-text-stroke: 2.5px black;
@@ -31,3 +30,11 @@
   background: #555;
 }
 
+@media screen and (max-width: 480px) {
+  .text-5xl {
+    font-size: 2rem !important;
+  }
+  .text-xl {
+    font-size: 0.94rem !important;
+  }
+}
