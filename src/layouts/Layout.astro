@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -10,19 +10,16 @@ import Footer from '../components/Footer.astro';
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="" />
     <meta name="generator" content={Astro.generator} />
-    <title>Positivus</title>
-    <meta
-      name="description"
-      content="A beautiful and functional landing page design created specifically for digital marketing agencies. With its clean and modern design, Positivus is the perfect template to showcase your agency's services and case studies to potential clients. Built with astro and tailwindcss"
-    />
-	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <title>Trakexcel</title>
+    <meta name="description" content="Making digital products and services" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
   </head>
   <body class="bg-white font-SpaceGrotesk space-y-20">
     <Navbar />
     <slot />
-    <Footer/>
+    <Footer />
     <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
   </body>
 </html>
