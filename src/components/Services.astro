@@ -1,11 +1,7 @@
 ---
 import Container from "./Container.astro";
 import servicesData from "./Data/services.json";
-
-import gsap from "gsap/all";
-import ScrollTrigger from "gsap/ScrollTrigger";
-// Register the ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
+// import gsap from "gsap";
 ---
 
 <Container>
@@ -76,14 +72,24 @@ gsap.registerPlugin(ScrollTrigger);
   </div>
 </Container>
 
-<script is:inline>
+<!-- <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script> -->
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
-  // This script will run on the client side after the page has loaded
   let selectButtons = document.querySelectorAll(".learn-search");
 
   selectButtons.forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("mouseover", () => {
       button.classList.toggle("active");
+
+      gsap.to(button, {
+        rotation: 45,
+        duration: 0.5,
+        ease: "power1.inOut",
+        playOPtions: "play none none reverse",
+      });
     });
   });
 </script>
