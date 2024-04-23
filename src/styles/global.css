@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --hc-sm: clamp(0.7rem, 0.35vi + 0.61rem, 0.89rem);
+  --hc-base: clamp(0.88rem, 0.57vi + 0.73rem, 1.19rem);
+  --hc-md: clamp(1.09rem, 0.89vi + 0.87rem, 1.58rem);
+  --hc-lg: clamp(1.37rem, 1.35vi + 1.03rem, 2.11rem);
+  --hc-xl: clamp(1.71rem, 2.01vi + 1.21rem, 2.81rem);
+  --hc-xxl: clamp(2.14rem, 2.93vi + 1.4rem, 3.75rem);
+  --hc-xxxl: clamp(2.67rem, 4.23vi + 1.61rem, 5rem);
+}
+
+html {
+  overflow-x: hidden;
+}
+
 @layer base {
   .font-outline {
     -webkit-text-stroke: 2.5px black;
@@ -37,4 +51,17 @@
   .text-xl {
     font-size: 0.94rem !important;
   }
+}
+@media screen and (max-width: 768px) {
+  .text-6xl {
+    font-size: var(--hc-md) !important;
+  }
+  .p-12 {
+    padding: 1rem;
+  }
+}
+nav {
+  background: #ffffffc4;
+  backdrop-filter: blur(16px);
+  border-bottom: solid 0.0058vw #ffecec;
 }

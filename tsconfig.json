@@ -2,6 +2,10 @@
   "extends": "astro/tsconfigs/strict",
    "compilerOptions": {
     "allowSyntheticDefaultImports": true,
- }
+ },
+ "exclude": [
+    "node_modules",
+    "**/*.yml"
+ ]
 
 }

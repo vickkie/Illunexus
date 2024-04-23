@@ -1,7 +1,6 @@
 ---
 import Container from "./Container.astro";
 import servicesData from "./Data/services.json";
-// import gsap from "gsap";
 ---
 
 <Container>
@@ -13,8 +12,7 @@ import servicesData from "./Data/services.json";
     </div>
     <div class="flex items-center py-5 md:w-9/12 md:py-10">
       <p class="text-xl font-normal leading-7 text-center md:text-left">
-        Our digital marketing agency helps businesses grow and succeed online through a range of services including SEO,
-        PPC, social media marketing, and content creation.
+        What we specialize in fostering the growth and triumph of businesses in the digital sphere.
       </p>
     </div>
   </div>
@@ -34,9 +32,9 @@ import servicesData from "./Data/services.json";
                   <div class="text-3xl font-medium">{name2}</div>
                 </div>
               </div>
-              <a class="justify-start items-center gap-[15px] learn-search inline-flex" href={link}>
+              <a class="justify-start items-center gap-[15px] learn-link inline-flex" href={link}>
                 <div class="w-[41px] h-[41px] relative">
-                  <img class="w-[41px] h-[41px] left-0 top-0 absolute" src={arrow} />
+                  <img class="w-[41px] h-[41px] left-0 top-0 absolute learn-search" src={arrow} />
                 </div>
                 <div class="text-xl font-normal leading-7">Learn more</div>
               </a>
@@ -72,23 +70,27 @@ import servicesData from "./Data/services.json";
   </div>
 </Container>
 
-<!-- <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script> -->
-
 <script>
   import gsap from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
-  let selectButtons = document.querySelectorAll(".learn-search");
 
-  selectButtons.forEach((button) => {
-    button.addEventListener("mouseover", () => {
-      button.classList.toggle("active");
-
-      gsap.to(button, {
-        rotation: 45,
+  let serviceLinks = document.querySelectorAll(".learn-link");
+  serviceLinks.forEach((serviceLink) => {
+    let serviceButton = serviceLink.querySelector(".learn-search");
+    serviceLink.addEventListener("mouseover", () => {
+      gsap.to(serviceButton, {
+        rotation: 40,
         duration: 0.5,
-        ease: "power1.inOut",
-        playOPtions: "play none none reverse",
+        ease: "none",
+      });
+    });
+
+    serviceLink.addEventListener("mouseout", () => {
+      gsap.to(serviceButton, {
+        rotation: 0,
+        duration: 0.5,
+        ease: "none",
       });
     });
   });
