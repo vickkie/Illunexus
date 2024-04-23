@@ -1,12 +1,12 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
+ push:
     branches: [ main ]
-  workflow_dispatch:
+ workflow_dispatch:
 
 jobs:
-  build:
+ build:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -17,13 +17,16 @@ jobs:
       - name: Install, build, and upload your site
         uses: withastro/action@v2
 
-  deploy:
+ deploy:
     needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      # url: https://illunexus.vercel.app
+      url: https://vickkie.github.io/
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
