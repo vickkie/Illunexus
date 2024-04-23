@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages with Astro
 
 on:
  push:
@@ -22,7 +22,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      # url: https://illunexus.vercel.app
       url: https://vickkie.github.io/
     steps:
       - name: Deploy to GitHub Pages
