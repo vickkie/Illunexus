@@ -20,12 +20,11 @@ jobs:
  deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: https://vickkie.github.io/Illunexus
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.ILLUNEXUS }}
+          publish_branch: gh-pages
+          publish_dir: ./public
