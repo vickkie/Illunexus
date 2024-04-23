@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: https://vickkie.github.io/
+      url: https://vickkie.github.io/Illunexus
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
