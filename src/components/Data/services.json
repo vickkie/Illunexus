@@ -1,8 +1,8 @@
 [
     {
         "id": 1,
-        "name1": "Search engine",
-        "name2": "optimization",
+        "name1": "Search Engine ",
+        "name2": "marketing",
         "background": "h-[310px] p-12 bg-zinc-100 rounded-[45px] shadow border border-black justify-between items-center flex text-black",
         "arrow": "./services/ag.svg",
         "link": "./",
@@ -10,7 +10,7 @@
     },
     {
         "id": 2,
-        "name1": "Pay-per-click",
+        "name1": "Cost-Per-Action",
         "name2": "advertising",
         "background": "h-[310px] p-12 bg-lime rounded-[45px] shadow border border-black justify-between items-center flex text-black",
         "arrow": "./services/ag.svg",

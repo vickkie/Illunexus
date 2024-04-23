@@ -2,6 +2,8 @@
 import Container from "../components/Container.astro";
 import Layout from "../layouts/Layout.astro";
 import Team from "../components/Team.astro";
+
+import "../styles/mouse-follower.min.css";
 ---
 
 <Layout title="Welcome to our site">
@@ -29,7 +31,7 @@ import Team from "../components/Team.astro";
         </div>
       </div>
 
-      <div class="flex-row items-center">
+      <!-- <div class="flex-row items-center">
         <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6">
           <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
             <img
@@ -78,7 +80,7 @@ import Team from "../components/Team.astro";
             />
           </div>
         </div>
-      </div>
+      </div> -->
     </Container>
     <Team />
   </main>
