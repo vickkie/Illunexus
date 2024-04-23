@@ -1,5 +1,5 @@
 {
-  "name": "trakexcel",
+  "name": "illunexus",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,6 +10,18 @@
     "astro": "astro",
     "watch": "nodemon"
   },
+   "repository": {
+  "type": "git",
+  "url": "git+https://github.com/vickkie/Illunexus.git"
+ },
+ "keywords": [
+  "Hypercritical"
+ ],
+ "author": "uzitrake",
+ "license": "ISC",
+ "bugs": {
+  "url": "https://github.com/vickkie/Illunexus/issues"
+ },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
     "@astrojs/tailwind": "^5.1.0",
