@@ -1,6 +1,0 @@
-{
- "watch": ["src"],
- "ext": "astro,js,jsx,ts,tsx,css,html,json",
- "exec": "astro build"
-}
-
