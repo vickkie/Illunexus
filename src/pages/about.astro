@@ -2,86 +2,64 @@
 import Container from "../components/Container.astro";
 import Layout from "../layouts/Layout.astro";
 import Team from "../components/Team.astro";
+import Herotop from "../components/AboutHero.astro";
+import Faqs from "../components/Faqs.astro";
 
 import "../styles/mouse-follower.min.css";
 ---
 
 <Layout title="Welcome to our site">
-  <main class="space-y-20">
-    <Container>
-      <div class="relative flex flex-col-reverse items-center md:flex-row" id="hero">
-        <div class="row items-center py-5 md:pb-20 md:pt-10">
-          <div class="text-center space-y-10">
-            <h2 class="text-5xl font-medium leading-none md:text-6xl">
-              We Navigate the <br /> digital landscape <br /> for success
-            </h2>
-            <p class="mt-6 mb-8 text-xl font-normal leading-7 sm:mb-12">
-              Our digital marketing agency helps businesses grow and succeed online through a range of services
-              including SEO, PPC, social media marketing, and content creation.
-            </p>
-            <a
-              class="px-9 py-5 bg-zinc-900 hover:bg-white text-white hover:text-black border rounded-2xl justify-items-center md:justify-items-start gap-2.5 inline-flex"
-              rel="noopener noreferrer"
-              href="https://hypercritical.vercel.app"
-              target="_blank"
-            >
-              <h2 class="text-center text-xl font-normal leading-7">Reach out</h2>
-            </a>
-          </div>
-        </div>
-      </div>
+  <Herotop />
 
-      <!-- <div class="flex-row items-center">
-        <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6">
-          <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-            <img
-              src="./clients/01.svg"
-              class="h-12 w-auto mx-auto"
-              loading="lazy"
-              alt="client logo"
-              width=""
-              height=""
-            />
+  <main class="">
+    <Container>
+      <div class="about-wrapper">
+        <div class="about-explatop">
+          <div class="about-head">
+            <h1 class="text-3xl font-medium leading-none sm:text-3xl md:text-5xl sm-center-text">About Us</h1>
           </div>
-          <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-            <img
-              src="./clients/02.svg"
-              class="h-12 w-auto mx-auto"
-              loading="lazy"
-              alt="client logo"
-              width=""
-              height=""
-            />
-          </div>
-          <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
-            <img src="./clients/03.svg" class="h-9 w-auto m-auto" loading="lazy" alt="client logo" width="" height="" />
-          </div>
-          <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-            <img
-              src="./clients/04.svg"
-              class="h-12 w-auto mx-auto"
-              loading="lazy"
-              alt="client logo"
-              width=""
-              height=""
-            />
-          </div>
-          <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
-            <img src="./clients/05.svg" class="h-8 w-auto m-auto" loading="lazy" alt="client logo" width="" height="" />
-          </div>
-          <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-            <img
-              src="./clients/06.svg"
-              class="h-12 w-auto mx-auto"
-              loading="lazy"
-              alt="client logo"
-              width=""
-              height=""
-            />
+          <div class="about-explamain">
+            <p class="text-xl font-normal leading-7 md:text-left">
+              We are a digital marketing agency that specializes in creating and optimizing digital marketing
+              strategies. We are dedicated to helping our clients achieve their online goals.
+            </p>
+            <br />
+            <br />
+            <h3 class="text-2xl font-medium leading-none sm:text-3xl sm-center-text">Why choose us</h3>
+            <br />
+            <p class="text-xl font-normal leading-7 md:text-left">
+              Our team has extensive experience and expertise in building thriving online communities. From strategizing
+              community engagement to managing interactions and fostering a sense of belonging, we know what it takes to
+              create vibrant online spaces that drive brand advocacy and customer loyalty. With our guidance and
+              support, you can trust us to build and nurture a community that amplifies your brand's reach and impact.
+            </p>
           </div>
         </div>
-      </div> -->
+        <div class="about-us"></div>
+      </div>
     </Container>
+    <div class="grid grid-cols-4 text-center gap-4 stats-strip">
+      <div class="flex flex-col justify-end items-center p-4">
+        <div class="text-5xl font-bold">3.2K+</div>
+        <div class="text-xl font-normal">Projects</div>
+      </div>
+      <div class="flex flex-col justify-end items-center p-4">
+        <div class="text-5xl font-bold">5</div>
+        <div class="text-xl font-normal">Years of experience</div>
+      </div>
+      <div class="flex flex-col justify-end items-center p-4">
+        <div class="text-5xl font-bold">35k+</div>
+        <div class="text-xl font-normal">Social followers</div>
+      </div>
+      <div class="flex flex-col justify-end items-center p-4">
+        <div class="text-5xl font-bold">100k+</div>
+        <div class="text-xl font-normal">Profits generated</div>
+      </div>
+    </div>
+
+    <Faqs />
     <Team />
   </main>
 </Layout>
+
+<script is:inline src="https://raw.githubusercontent.com/vickkie/dev-javascript/main/scrollsmoother.js"></script>

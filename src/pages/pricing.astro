@@ -2,7 +2,7 @@
 import Container from "../components/Container.astro";
 import Layout from "../layouts/Layout.astro";
 //@ts-ignore
-import companyData from "./Data/config.json";
+import companyData from "../components/Data/config.json";
 import "../styles/mouse-follower.min.css";
 ---
 
@@ -15,8 +15,8 @@ import "../styles/mouse-follower.min.css";
             Designed for business teams like yours
           </h2>
           <p class="mb-5 font-light text-gray-500 sm:text-xl">
-            Here at Positivus we focus on markets where technology, innovation, and capital can unlock long-term value
-            and drive economic growth.
+            Here at &nbsp;<span>{companyData.companyName}</span> &nbsp; we focus on markets where technology, innovation,
+            and capital can unlock long-term value and drive economic growth.
           </p>
         </div>
         <div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">

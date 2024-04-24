@@ -1,0 +1,116 @@
+---
+import Container from "../components/Container.astro";
+import "../styles/faqs.css";
+//@ts-ignore
+import faqsData from "./Data/faqs.json";
+---
+
+<Container>
+  <div>
+    <div class="faqs-section">
+      <div class="faqs-top">
+        <div class="faqs-top-left">
+          <div class="faqs-image-wrapper">
+            <img src="../images/faq-phone.png" alt="" srcset="" />
+          </div>
+        </div>
+        <div class="faqs-top-right">
+          <div>
+            <p class="text-3xl py-6 font-medium leading-none sm:text-3xl sm-center-text">
+              The easiest way to Marketing strategy
+            </p>
+            <br />
+
+            <div>
+              <p class="text-2xl font-normal leading-7 md:text-left sm:text-xl sm-center-text">
+                Build online community
+              </p>
+            </div>
+            <br />
+            <div class="about-explamain">
+              <p class="font-normal leading-7 md:text-left">
+                Creating an online community around your brand or product is a highly effective marketing strategy. By
+                fostering engagement and interaction within your community, you can cultivate brand loyalty, generate
+                word-of-mouth referrals, and gain valuable insights into your target audience's preferences and
+                behaviors.
+              </p>
+              <br />
+              <br />
+              <h3 class="text-2xl font-normal leading-none sm:text-xl sm-center-text">Attractive online portfolio</h3>
+              <br />
+              <p class="font-normal leading-7 md:text-left">
+                An attractive online portfolio serves as a powerful marketing tool to showcase your products, services,
+                and achievements.A user-friendly portfolio can help you attract and impress potential clients or
+                customers. An enticing portfolio not only enhances your brand image but also helps you stand out in a
+                competitive market.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="faqs-top-right px-2 sm:px-9">
+          <div>
+            <div>
+              <p class="text-2xl py-6 font-medium leading-none sm:text-2xl sm-center-text">
+                Bring your target users together on social media
+              </p>
+            </div>
+            <br />
+            <div class="about-explamain">
+              <p class="font-normal leading-7 md:text-left">
+                We are a digital marketing agency that specializes in creating and optimizing digital marketing
+                strategies. We are dedicated to helping our clients achieve their online goals.
+              </p>
+              <br />
+            </div>
+          </div>
+        </div>
+        <div class="faqs-top-left">
+          <div class="faqs-image-wrapper grid justify-items-center">
+            <img src="../images/social-boost1.png" class="" alt="faqs image" srcset="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="faqs-bottom-head py-12 text-center">
+      <h1 class="text-2xl font-medium leading-none sm:text-4xl">Frequently Asked Questions</h1>
+    </div>
+
+    <div class="faqs-bottomS">
+      <div id="accordion-open" data-accordion="close" class="text-black grid gap-4 my-6">
+        {
+          faqsData.faqs.map(({ id, hid, bid, target, question, answer }) => (
+            <h2 id={hid}>
+              <div class="w-full px-14 py-10 bg-white focus:bg-lime rounded-[45px] shadow border border-black flex-col justify-start items-start gap-7 inline-flex">
+                <button
+                  type="button"
+                  class="w-full flex justify-between items-center"
+                  data-accordion-target={target}
+                  aria-expanded="true"
+                  aria-controls={bid}
+                >
+                  <div class="justify-start items-center gap-6 flex">
+                    <h2 class="text-xl md:text-6xl font-medium">{id}</h2>
+                    <h3 class="text-lg md:text-2xl font-medium">{question}</h3>
+                  </div>
+                  <div>
+                    <img
+                      data-accordion-icon
+                      src="/team/plus.svg"
+                      alt=""
+                      class="justify-items-end w-10 h-10"
+                      aria-hidden="true"
+                    />
+                  </div>
+                </button>
+                <div class="text-lg font-normal" id={bid} aria-labelledby={hid}>
+                  <hr class="w-full border border-black mb-6" />
+                  <p class="mb-2 text-gray-500 text-sm md:text-lg">{answer}</p>
+                </div>
+              </div>
+            </h2>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Container>

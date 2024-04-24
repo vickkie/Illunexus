@@ -2,7 +2,7 @@
 // Define your navigation links here
 const navLinks = [
   { href: "/about", label: "About us" },
-  { href: "/#services", label: "Services" },
+  { href: "/services", label: "Services" },
   { href: "/#projects", label: "Use Cases" },
   { href: "/pricing", label: "Pricing" },
   { href: "/blog", label: "Blog" },
@@ -15,7 +15,7 @@ import Container from "./Container.astro";
   <Container>
     <div class="flex flex-wrap items-center justify-between mx-auto py-3">
       <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <img src="/Logo.svg" class="h-8" alt="Logo" />
+        <img src="/illunexus-logo.png" class="h-8 sm:h-12" alt="Logo" />
       </a>
       <button
         data-collapse-toggle="navbar-default"
@@ -60,7 +60,7 @@ import Container from "./Container.astro";
       </div>
       <div class="hidden w-full md:block md:w-auto" id="navbar-default">
         <a
-          class="px-9 py-5 rounded-2xl border border-zinc-900 hover:bg-black text-black hover:text-white inline-flex"
+          class="px-9 py-4 rounded-2xl border border-zinc-900 hover:bg-black text-black hover:text-white inline-flex"
           href="https://hypercritical.vercel.app"
           target="_blank"
           ><h2 class="text-center text-xl font-normal leading-7">Let's talk</h2>

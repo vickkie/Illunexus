@@ -1,0 +1,91 @@
+.abouthero {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  align-items: center;
+  padding-top: 2rem;
+}
+.hero-header {
+  font-size: var(--hc-xxl);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--color-black);
+  padding: 6rem 2rem;
+}
+.hero-image {
+  height: 100vh;
+  display: block;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .parallax-hero {
+    height: 130vh;
+  }
+  .hero-image {
+    width: 98%;
+    margin: auto;
+    border-radius: 50px;
+  }
+}
+.parallax-image {
+  will-change: transform;
+}
+@media screen and (min-width: 1024px) {
+  .parallax-me-image {
+    height: 110%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .parallax-me-image {
+    height: 85%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .hero-image {
+    height: 50vh !important;
+  }
+
+  .parallax-me-image {
+    width: 200%;
+    position: relative;
+    left: -50%;
+  }
+  .about-explatop {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto;
+  }
+}
+
+.hero-image {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.about-explatop {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  align-items: top;
+  justify-content: start;
+  padding-top: 2rem;
+}
+
+.about-explatop-left {
+  padding: 1rem;
+  font-size: var(--hc-xl);
+}
+
+@media screen and (max-width: 468px) {
+  .parallax-image {
+    will-change: transform;
+    height: 100%;
+  }
+  .parallax-about-image {
+    height: 100%;
+    max-width: auto;
+  }
+}

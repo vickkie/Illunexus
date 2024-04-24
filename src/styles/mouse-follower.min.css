@@ -26,6 +26,12 @@
 .mf-cursor.-inverse {
   color: #fff;
 }
+.mf-cursor.-darkinverse {
+  color: #000;
+}
+.mf-cursor.-purplish::before {
+  background-color: #e093e5;
+}
 @supports (mix-blend-mode: exclusion) {
   .mf-cursor.-exclusion {
     mix-blend-mode: exclusion;

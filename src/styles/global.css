@@ -10,6 +10,9 @@
   --hc-xl: clamp(1.71rem, 2.01vi + 1.21rem, 2.81rem);
   --hc-xxl: clamp(2.14rem, 2.93vi + 1.4rem, 3.75rem);
   --hc-xxxl: clamp(2.67rem, 4.23vi + 1.61rem, 5rem);
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray: #0d0c22;
 }
 
 html {
@@ -51,6 +54,9 @@ html {
   .text-xl {
     font-size: 0.94rem !important;
   }
+  .sm-center-text {
+    text-align: center;
+  }
 }
 @media screen and (max-width: 768px) {
   .text-6xl {
@@ -64,4 +70,28 @@ nav {
   background: #ffffffc4;
   backdrop-filter: blur(16px);
   border-bottom: solid 0.0058vw #ffecec;
+}
+.justify-items-center {
+  justify-items: center;
+}
+.service-hero {
+  width: 68%;
+  margin: auto;
+}
+.service-belowhero-wrapper {
+  padding: 2rem;
+  background: black;
+  border-radius: 35px;
+}
+.service-belowhero {
+  border: solid 0.058vw;
+  border-radius: 35px;
+  margin: auto;
+  padding: 0 1rem;
+  background: black;
+  color: white;
+}
+
+.border-100 {
+  border-radius: 100px;
 }

@@ -1,0 +1,51 @@
+---
+import Container from "../components/Container.astro";
+import Layout from "../layouts/Layout.astro";
+import Service from "../components/Services.astro";
+
+import "../styles/mouse-follower.min.css";
+---
+
+<Layout title="Our services">
+  <main class="">
+    <Container>
+      <div class="relative grid grid-cols-1 items-center md:grid-cols-2" id="hero">
+        <div class="row items-center py-5 md:pb-20 md:pt-10">
+          <div class="text-left space-y-3">
+            <h1 class="text-2xl font-medium leading-none hero-head sm:text-5xl py-5">
+              Stay ahead of the curve with our forward-thinking
+            </h1>
+            <p class="mt-6 mb-8 text-md font-normal leading-7 sm:mb-12">
+              An award-winning SEO agency with disciplines in digital marketing, design, and website development.
+              focused on understanding you.
+            </p>
+            <a
+              class="px-9 py-5 bg-zinc-900 hover:bg-white text-white hover:text-black border rounded-2xl justify-items-center md:justify-items-start gap-2.5 inline-flex border-100"
+              rel="noopener noreferrer"
+              href="https://hypercritical.vercel.app"
+              target="_blank"
+            >
+              <h2 class="text-center text-xl font-normal leading-7">Schedule Call</h2>
+            </a>
+          </div>
+        </div>
+        <div class="flex items-center py-5 md:pb-20 md:pt-10">
+          <img src="../images/service-hero2.png" width="100%" alt="Hero" class="service-hero" />
+        </div>
+      </div>
+      <div class="service-belowhero-wrapper">
+        <div class="service-belowhero grid grid-cols-1 sm:grid-cols-2">
+          <div class="text-2xl text-left space-y-3 py-5 md:pb-20 md:pt-10 md:pl-10 text-3xl">
+            Provide the best service with out of the box ideas
+          </div>
+          <div class="text-left space-y-3 py-5 md:pb-20 md:pt-10 md:pl-10">
+            we are a passionate team of digital marketing enthusiasts dedicated to helping businesses succeed in the
+            digital world. With years of experience and a deep understanding of the ever-evolving online landscape, we
+            stay at the forefront of industry trends and technologies.
+          </div>
+        </div>
+      </div>
+    </Container>
+    <Service />
+  </main>
+</Layout>
