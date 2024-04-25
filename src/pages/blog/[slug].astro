@@ -1,0 +1,88 @@
+---
+// Import necessary components and layout
+import Layout from "../../layouts/Layout.astro";
+import blogs from "../../components/Data/blog.json";
+import "../../styles/mouse-follower.min.css";
+import Cta from "../../components/Cta.astro";
+
+// Define the interface for the props
+interface BlogPostProps {
+  blogPost: {
+    title: string;
+    description: string;
+    author: {
+      name: string;
+      avatar: string;
+    };
+    content: string;
+  };
+}
+
+export async function getStaticPaths() {
+  // Generate paths based on your data
+  const paths = blogs.map(({ slug }) => ({
+    params: { slug },
+  }));
+
+  // Convert paths to an array
+  return paths;
+}
+
+console.log("getStaticPaths is almost running");
+
+export async function getStaticProps({ params }: { params: { slug: string } }) {
+  console.log(params.slug); // Log the slug parameter to verify it matches a blog post slug
+
+  // Find the blog post based on the slug
+  const blogPost = blogs.find((blog) => blog.slug === params.slug);
+
+  // Check if the blog post was found
+  if (!blogPost) {
+    console.log("Blog post not found");
+    return {
+      notFound: true,
+    };
+  }
+
+  // Return the blog post data as props
+  return {
+    props: {
+      blogPost,
+    },
+  };
+}
+
+const { blogPost }: BlogPostProps = Astro.props;
+
+// Use the blogPost data to render the page
+---
+
+<Layout title={`${blogPost?.title || "Blog Post Not Found"} - Illunexus`}>
+  <main>
+    {
+      blogPost ? (
+        <>
+          <h1>{blogPost.title}</h1>
+          <p>{blogPost.description}</p>
+
+          <div>
+            <img src={blogPost.author.avatar} alt={blogPost.author.name} class="w-16 h-16 rounded-full" />
+            <p>{blogPost.author.name}</p>
+          </div>
+          {/* Display the blog post content */}
+          <div class="prose">
+            <div class="blog-content-wrapper">
+              <span>{blogPost.content}</span>
+            </div>
+          </div>
+        </>
+      ) : (
+        <div class="prose text-center text-gray-500 text-3xl p-4 m-4 rounded margin-auto py-12 md:text-4xl">
+          <h1>Blog post not found.</h1>
+        </div>
+      )
+    }
+
+    <Cta />
+  </main>
+</Layout>

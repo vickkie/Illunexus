@@ -1,0 +1,40 @@
+{
+  "packages": {
+    "individual": {
+      "pricing": "$100 - $500",
+      "features": [
+        "Technical SEO Audit",
+        "Keyword Research",
+        "On-Page Optimization",
+        "Content Strategy",
+        "Monthly Reporting",
+        "Social Media Audit",
+        "Basic Branding Consultation"
+      ]
+    },
+    "startup": {
+      "pricing": "$500 - $1500",
+      "features": [
+        "Everything in Individual Package",
+        "Competitor Analysis",
+        "Link Building",
+        "Local SEO Optimization",
+        "Content Creation",
+        "Social Media Management",
+        "Advanced Branding Consultation"
+      ]
+    },
+    "enterprise": {
+      "pricing": "$1500 - $5000+",
+      "features": [
+        "Everything in Startup Package",
+        "Customized SEO Strategy",
+        "Conversion Rate Optimization (CRO)",
+        "Advanced Analytics",
+        "Content Marketing Campaigns",
+        "Advanced Social Media Management",
+        "Full Branding Package"
+      ]
+    }
+  }
+}
