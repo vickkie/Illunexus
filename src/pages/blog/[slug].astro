@@ -1,9 +1,11 @@
 ---
 // Import necessary components and layout
+
 import Layout from "../../layouts/Layout.astro";
 import blogs from "../../components/Data/blog.json";
 import "../../styles/mouse-follower.min.css";
 import Cta from "../../components/Cta.astro";
+import ContentRenderer from "../../components/ContentRenderer.astro";
 
 // Define the interface for the props
 interface BlogPostProps {
@@ -15,8 +17,16 @@ interface BlogPostProps {
       avatar: string;
     };
     content: string;
+    date: string;
+    type: string;
+    slug: string;
   };
 }
+
+const pages = blogs;
+
+const { slug } = Astro.params;
+const page = pages.find((page) => page.slug === slug);
 
 export async function getStaticPaths() {
   // Generate paths based on your data
@@ -28,51 +38,36 @@ export async function getStaticPaths() {
   return paths;
 }
 
-console.log("getStaticPaths is almost running");
+// console.log(`Slug: ${slug}`);
 
-export async function getStaticProps({ params }: { params: { slug: string } }) {
-  console.log(params.slug); // Log the slug parameter to verify it matches a blog post slug
+// console.log(`page post: ${JSON.stringify(page)}`);
 
-  // Find the blog post based on the slug
-  const blogPost = blogs.find((blog) => blog.slug === params.slug);
+const pageType = page?.type;
 
-  // Check if the blog post was found
-  if (!blogPost) {
-    console.log("Blog post not found");
-    return {
-      notFound: true,
-    };
-  }
-
-  // Return the blog post data as props
-  return {
-    props: {
-      blogPost,
-    },
-  };
-}
-
-const { blogPost }: BlogPostProps = Astro.props;
-
-// Use the blogPost data to render the page
+console.log(`page type: ${pageType}`);
 ---
 
-<Layout title={`${blogPost?.title || "Blog Post Not Found"} - Illunexus`}>
+<Layout title={`${page?.title || "Blog Post Not Found"} - Illunexus`}>
   <main>
     {
-      blogPost ? (
+      page ? (
         <>
-          <h1>{blogPost.title}</h1>
-          <p>{blogPost.description}</p>
+          <div class="container mx-auto px-4 py-8">
+            <h1 class="text-4xl font-bold mb-4">{page.title}</h1>
+            <p class="text-lg mb-8">{page.description}</p>
 
-          <div>
-            <img src={blogPost.author.avatar} alt={blogPost.author.name} class="w-16 h-16 rounded-full" />
-            <p>{blogPost.author.name}</p>
-          </div>
-          {/* Display the blog post content */}
-          <div class="prose">
-            <div class="blog-content-wrapper">
-              <span>{blogPost.content}</span>
+            <div class="flex items-center mb-8">
+              <img src={page.author.avatar} alt={page.author.name} class="w-16 h-16 rounded-full mr-4" />
+              <p class="text-lg">{page.author.name}</p>
+            </div>
+
+            {/* Display the blog post content */}
+            <div class="prose prose-lg mx-auto">
+              <div class="blog-content-wrapper">
+                <span>
+                  <ContentRenderer content={page.content} />
+                </span>
+              </div>
             </div>
           </div>
         </>
