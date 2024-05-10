@@ -1,6 +1,4 @@
-# Trakexcel - Digital Marketing Agency
-
-Introducing "Positivus" - a stunning and versatile Astro theme designed for digital marketing agencies.
+# Illunexus - Digital Marketing Agency
 
 ## 🚀 Project Structure
 
